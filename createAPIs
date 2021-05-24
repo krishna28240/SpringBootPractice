@@ -1,0 +1,94 @@
+#TODO--steps
+//create category
+http://localhost:8080/v1/category
+{
+     "categoryName":"pants"
+}
+// to create category attributes
+API: http://localhost:8080/v1/categoryAttributes
+body:
+
+{
+     "category":{
+         "categoryName":"pants"
+     },
+     "categoryAttributes":[
+         {
+           "attributeName":"color",
+           "attributeValue":"black"
+         },
+         {
+           "attributeName":"size",
+           "attributeValue":"extra large"
+         },
+         {
+           "attributeName":"material",
+           "attributeValue":"linen"
+         }
+     ]
+}
+
+// create product
+API: http://localhost:8080/v1/product
+body:
+{   "productName":"black plain pontic pant",
+    "categoryName":"pants",
+    "quantityPerUnit":5,
+    "unitPrice":1500.5
+}
+
+//find product
+http://localhost:8080/v1/product/byId/3157cc00-d4f1-4fce-8ded-9d8346929155234
+
+//find category attribute by categoryId
+http://localhost:8080/v1/categoryAttributes/byCategoryId/40
+
+=================================================================
+//example"
+
+//to create category
+http://localhost:8080/v1/category
+body:
+{
+     "categoryName":"kitchen accessories"
+}
+
+// to create category attributes
+API: http://localhost:8080/v1/categoryAttributes
+body:
+{
+     "category":{
+         "categoryName":"kitchen accessories"
+     },
+     "categoryAttributes":[
+         {
+           "attributeName":"brand",
+           "attributeValue":"morphy richards"
+         },
+         {
+           "attributeName":"weight",
+           "attributeValue":"12"
+         },
+         {
+           "attributeName":"volume",
+           "attributeValue":"30"
+         }
+     ]
+}
+
+// create product-POST
+API: http://localhost:8080/v1/product
+Body:
+
+{   "productName":"tea kettle",
+    "categoryName":"kitchen accessories",
+    "quantityPerUnit":5,
+    "unitPrice":500.0
+}
+
+//get product by id
+
+http://localhost:8080/v1/product/byId/4406f300-69ab-4177-896f-983bfc4d5994
+
+//get category Attributes
+http://localhost:8080/v1/categoryAttributes/byCategoryId/45
